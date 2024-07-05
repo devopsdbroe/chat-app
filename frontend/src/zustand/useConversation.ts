@@ -1,12 +1,5 @@
 import { create } from "zustand";
 
-type MessageType = {
-	id: string;
-	body: string;
-	senderId: string;
-	// TODO: Add shouldShake for animation
-};
-
 interface ConversationState {
 	selectedConversation: ConversationType | null;
 	messages: MessageType[];
