@@ -1,3 +1,4 @@
+import { useSocketContext } from "../../context/SocketContext";
 import useConversation from "../../zustand/useConversation";
 
 const Conversation = ({
@@ -10,8 +11,8 @@ const Conversation = ({
 	const { setSelectedConversation, selectedConversation } = useConversation();
 	const isSelected = selectedConversation?.id === conversation.id;
 
-	// TODO: Add socket.io to update whether user is online or not
-	const isOnline = false;
+	const { onlineUsers } = useSocketContext();
+	const isOnline = onlineUsers.includes(conversation.id);
 
 	return (
 		<>

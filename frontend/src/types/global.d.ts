@@ -9,5 +9,5 @@ type MessageType = {
 	body: string;
 	senderId: string;
 	createdAt: string;
-	// TODO: Add shouldShake for animation
+	shouldShake?: boolean;
 };
